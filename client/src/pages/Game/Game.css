@@ -1,20 +1,21 @@
 .game-status-box {
     height: 4.1rem;
     padding: 0.3rem;
-    margin-left: 4rem !important;
-    margin-right: 4rem !important;
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
 }
 
 .game-status-box img {
     position: absolute;
-    left: 0.09rem;
-    top: 0.09rem;
+    left: 1rem;
+    /* top: 0.09rem; */
 }
 
 .game-status-margin {
     margin-top: 2rem !important;
     margin-bottom: 2rem !important;
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
+    
 }
 
 .game-status-box h3 {
@@ -25,9 +26,10 @@
 }
 
 .coin-size {
-    height: 7rem;
+    height: 2rem;
     border-radius: 50%;
     transition: all .8s ease-in-out;
+    display: block;
 }
 
 .coin-size:hover {
@@ -76,8 +78,8 @@ i {
 .toggle {
     position: relative;
     display: block;
-    width: 80px;
-    height: 36px;
+    width: 5rem;
+    height: 10rem;
     border-radius: 50%;
     cursor: pointer;
     /* transform: translate3d(0, 0, 0); */
@@ -149,7 +151,8 @@ i {
 
 .music-checkbox-button {
     position: absolute;
-    top: 20px;
+    top: 22px;
+    right: 10px;
 }
 
 
@@ -157,16 +160,26 @@ i {
     box-shadow: none;
 }
 
-/* .returnLobbyButton {
-    box-shadow: 0px 0px 70px 4px rgba(248, 162, 3, 0.75);
-} */
-
-.emptyLokiDeck {
-    width: 80px;
-    height: 160px;
+.returnLobbyButton {
+    height: 40px;
+    width: 170px;
+    font-size: 2vh;
+    position: absolute;
+    top: 20px;
+    left: 15px;
 }
 
-.ravenPush, .swapCard {
+
+.ravenPush {
+    font-size: 2vh;
+}
+
+.emptyLokiDeck {
+    width: 5rem;
+    height: 10rem;
+}
+
+.ravenPush, .swapCard, .doubleTrouble{
     animation: glowLoki 2000ms infinite;
 }
 
@@ -177,9 +190,9 @@ i {
     100% { box-shadow: 0 0 10px rgba(248, 162, 3, 0.884); }
 }
 
-.opponentCardDeck, .opponentLokiDeck {
-    width: 80px;
-    height: 160px;
+.opponentCardDeck, .opponentLokiDeck, .emptyLokiDeck {
+    width: 5rem;
+    height: 10rem;;
 
 }
 
@@ -204,21 +217,12 @@ i {
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-.lokiSwapGif {
+.lokiSwapGif, .lokiFlipGif, .lokiDestroyGif {
     border: 2px rgba(248, 162, 3, 0.884) solid;
     transition: all 0.2s ease;
 }
 
-.lokiSwapGif:hover {
-    transform: scale(2)
-}
-
-.lokiFlipGif {
-    border: 2px rgba(248, 162, 3, 0.884) solid;
-    transition: all 0.2s ease;
-}
-
-.lokiFlipGif:hover {
+.lokiSwapGif:hover, .lokiFlipGif:hover, .lokiDestroyGif:hover {
     transform: scale(2)
 }
 
@@ -227,8 +231,24 @@ i {
 }
 
 .landBoard {
-    margin-top: 2.5rem;
-    margin-bottom: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    width: 100%;
+    height: 11.8rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 1rem 1rem;
+}
+
+.yourHandBoard {
+    overflow-x:auto;
+    white-space: nowrap;
+    height: 15rem;
+    width: 100%;
+}
+
+.userBoard {
+    height: 5rem;
 }
 
 .waitTurn  {
@@ -249,4 +269,77 @@ i {
     to {
         text-shadow: 0 0 15px rgba(3, 248, 23, 0.884)
         }
+}
+
+#gameBarText {
+    width: 100%;
+    font-size: 1.4vw;
+}
+
+#h3Hands {
+    font-size: 1vw;
+}
+
+#lokiChoices {
+    width: 90px;
+    height: 180px;
+}
+
+@media only screen and (max-width: 1440px) {
+
+    /* #h3Hands{
+        font-size: 1.25vw;
+    } */
+
+    /* #gameBarText {
+        font-size: 1.5rem;
+    } */
+
+    .opponentCardDeck, .opponentLokiDeck, .emptyLokiDeck {
+        width: 4rem;
+        height: 8rem;
+    }
+
+    #lokiChoices {
+        width: 75px;
+        height: 150px;
+    }
+
+    .ravenPush {
+        width: 10rem;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    .landBoard {
+        height: 12rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .opponentCardDeck, .opponentLokiDeck, .emptyLokiDeck {
+        width: 3rem;
+        height: 6rem;
+    }
+/* 
+    #gameBarText {
+        font-size: 1.5vw;
+    } */
+
+    /* #h3Hands{
+        font-size: 1.25vw;
+    } */
+
+    .landBoard {
+        height: 9rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .ravenPush {
+        width: 35%
+    }
+
 }
